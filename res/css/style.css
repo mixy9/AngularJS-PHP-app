@@ -1,0 +1,266 @@
+
+/* Global styles */
+
+@import url('../css/mediaQueries.css');
+@import url('../css/fonts.css');
+
+:root {
+    --text-color: #313131;
+    --primary: #204051;
+    --secondary: #84A9AC;
+    --tertiary: #E7DFD5;
+
+    --sky: linear-gradient(120deg, #47b0ba 10%, #c2e9fb 100%);
+
+    --Raleway: 'Raleway', cursive;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+html {
+    font-family: var(--Raleway);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    font-size: 1rem;
+    text-transform: initial;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+body {
+    background-color: white;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    /*border-bottom: 1px solid black;*/
+}
+
+.nav-brand {
+    width: 7rem
+}
+
+.menu-icons {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.close i {
+    color: #eb648c;
+}
+
+.nav-list {
+    width: 25rem;
+    height: 100vh;
+    background-color: #d7d4ed;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
+}
+
+.nav-list.active{
+    right: 0;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+.nav-item {
+    margin: 1.5rem 0;
+}
+
+.nav-link {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: black;
+}
+
+/* Hero */
+.hero {
+    width: 100%;
+    height: 100vh;
+    /*background: linear-gradient(135deg);*/
+    background-size: cover;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    border-bottom: 0;
+    height: 4.7rem;
+    background: url('../../assets/images/wave-small.png') center no-repeat;
+    background-size: cover;
+}
+
+.main-message {
+    width: 100%;
+    float: right;
+    max-width: 30rem;
+    /*color: black;*/
+    margin-top: 15%;
+    text-transform: uppercase;
+    transform: translateY(20%);
+}
+
+.main-message h1 {
+    /* Aldrich font? */
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+
+.pic {
+    width: 100%;
+    max-width: 48rem;
+    float: left;
+    margin-top: 8rem;
+}
+
+.btn {
+    background-color: #cc5276;
+    border-radius: 2rem;
+    border: 1px solid #cc5276;
+    color: white;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    transition: background-color 650ms;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 1px solid #cc5276;
+    color: var(--text-color);
+}
+
+i.fas {
+    font-style: normal;
+    font-family: fontawesome;
+}
+
+@media screen and (min-width: 700px) {
+    .nav-brand {
+        width: 10rem
+    }
+
+    .nav-list {
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        position: initial;
+        top: initial;
+        right: initial;
+        flex-direction: row;
+        transition: initial;
+    }
+
+    .menu-icons {
+        display: none;
+    }
+
+    .nav-item {
+        margin: 0 2.5rem;
+        color: black;
+    }
+
+    .nav-link,
+    .current {
+        color: black;
+        position: relative;
+        font-size: 1.1rem;
+    }
+
+    .nav-link:before,
+    .current:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -.5rem;
+        background-color: black;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 650ms;
+    }
+
+    .current:before {
+        transform: scaleX(1);
+    }
+
+    .nav-link:hover:before {
+        transform: scaleX(1);
+    }
+
+    .hero {
+        height: 100vh;
+        margin: 0 auto;
+    }
+
+    .main-message {
+        transform: translateY(15%);
+    }
+
+    .title-heading h1 {
+        font-size: 2.5rem;
+    }
+}
