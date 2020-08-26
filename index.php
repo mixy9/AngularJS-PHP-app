@@ -8,7 +8,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=yes' name='viewport' />
 
     <!-- Favicons -->
-    <link href="assets/images/favicon.png" rel="icon">-->
+    <link href="assets/images/favicon.png" rel="icon">
 
     <!--  Css  -->
     <link href="res/css/style.css" rel="stylesheet" type="text/css"/>
@@ -51,7 +51,7 @@
         <div class="container">
             <nav>
                 <div class="nav-brand">
-                    <a href="index.php">
+                    <a href="" ui-sref="welcome">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                 </div>
@@ -66,16 +66,16 @@
                     </div>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link current">About</a>
+                        <a href="#" class="nav-link" ui-sref-active="current" ng-class="{current: $state.includes('welcome')}" ui-sref="welcome">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Notebook</a>
+                        <a href="#" class="nav-link" ui-sref-active="current" ng-class="{current: $state.includes('dashboard')}" ui-sref="dashboard">Notebook</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Profile</a>
+                        <a href="" class="nav-link">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                        <a href="" class="nav-link">Contact</a>
                     </li>
                 </ul>
             </nav>

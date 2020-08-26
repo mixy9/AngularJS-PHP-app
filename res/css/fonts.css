@@ -5,3 +5,8 @@
     font-family: Raleway;
     src: url('../../assets/fonts/Raleway/Raleway.ttf');
 }
+
+@font-face {
+    font-family: Source-Code;
+    src: url('../../assets/fonts/Source_Code_Pro/SourceCodePro-Regular.ttf');
+}

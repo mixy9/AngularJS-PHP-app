@@ -9,10 +9,14 @@
     --primary: #204051;
     --secondary: #84A9AC;
     --tertiary: #E7DFD5;
-
-    --sky: linear-gradient(120deg, #47b0ba 10%, #c2e9fb 100%);
+    --button: #cc5276;
+    --input-cell: #C4DDE5;
+    --output-cell: #EFEFEF;
+    --light-gray: #a2a2a2;
+    /*--sky: linear-gradient(120deg, #47b0ba 10%, #c2e9fb 100%);*/
 
     --Raleway: 'Raleway', cursive;
+    --Source-Code: 'Source-Code', cursive;
 }
 
 *,
@@ -21,13 +25,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--text-color);
 }
 
 html {
     font-family: var(--Raleway);
     font-size: 1rem;
     box-sizing: border-box;
+    color: var(--text-color);
 }
 
 a {
@@ -94,13 +98,13 @@ nav {
 }
 
 .close i {
-    color: #eb648c;
+    color: var(--button);
 }
 
 .nav-list {
-    width: 25rem;
+    width: 100%;
     height: 100vh;
-    background-color: #d7d4ed;
+    background-color: #d2d2d2;
     position: fixed;
     top: 0;
     right: 0;
@@ -136,7 +140,6 @@ nav {
 .hero {
     width: 100%;
     height: 100vh;
-    /*background: linear-gradient(135deg);*/
     background-size: cover;
     position: relative;
 }
@@ -151,18 +154,24 @@ nav {
     background-size: cover;
 }
 
+.border {
+    border-top: 1px solid black;
+}
+
+.main-sec {
+    width: 95%;
+}
+
 .main-message {
     width: 100%;
     float: right;
     max-width: 30rem;
-    /*color: black;*/
     margin-top: 15%;
     text-transform: uppercase;
     transform: translateY(20%);
 }
 
 .main-message h1 {
-    /* Aldrich font? */
     font-size: 4rem;
     margin: 1rem 0;
 }
@@ -195,6 +204,76 @@ nav {
 i.fas {
     font-style: normal;
     font-family: fontawesome;
+}
+
+/* Notebook */
+.notebook {
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0 2.5rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.notebook h1 {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.notebook h2 {
+    font-size: 2.4375rem;
+    font-weight: 100;
+}
+
+.notebook h3 {
+    font-size: 1.9375rem;
+    font-weight: 100;
+}
+
+.notebook p {
+    font-size: 1.25rem;
+}
+
+.cell{
+    background-color: var(--input-cell);
+    width: 100%;
+    height: 3rem;
+    border-radius: 9px;
+    border: none;
+    padding: 0 2rem;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input[type="text"] {
+    font-family: var(--Source-Code);
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+.output {
+    background-color: var(--output-cell);
+}
+
+.add {
+    position: relative;
+    width: 2.8rem;
+    margin: 0.8rem;
+    text-align: center;
+}
+
+.notes {
+    width: 100%;
+}
+
+.notebook .fas {
+    color: var(--light-gray);
+}
+
+.new-row {
+    margin-top: 0;
 }
 
 @media screen and (min-width: 700px) {
@@ -262,5 +341,9 @@ i.fas {
 
     .title-heading h1 {
         font-size: 2.5rem;
+    }
+
+    .notebook {
+        width: 75%;
     }
 }
