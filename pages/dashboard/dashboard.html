@@ -5,26 +5,43 @@
     <div class="container">
         <div class="notebook">
 
-            <div class="add">
+            <div class="manage">
+                <i class="fas fa-play" ng-click="showOutput()"></i>
             </div>
 
             <div class="notes">
-                <h1>The great business</h1>
-                <h2>Aaaaas</h2>
-                <h3>Ssssssss</h3>
-                <p>Ssssssss dsaad as dsad ads asd </p>
-
+                <!--<h1>The great business</h1>-->
+                <!--<h2>Aaaaas</h2>-->
+                <!--<h3>Ssssssss</h3>-->
+                <!--<p>Ssssssss dsaad as dsad ads asd </p>-->
                 <input class="cell" type="text" placeholder="select * from ..." />
-                <div class="cell output"></div>
             </div>
 
-            <div class="add">
-                <i class="fas fa-ellipsis-h fa-2x"></i>
+            <div class="manage">
+                <i class="fas fa-ellipsis-h" ng-click="showDeleteButton = !showDeleteButton"></i>
+                <img ng-show="showDeleteButton" src="assets/images/delete.png" class="add-new delete" alt="addNew3">
             </div>
         </div>
-        <div class="notebook new-row">
-            <div class="add">
-                <img src="assets/images/add-new.svg" alt="">
+
+        <div class="notebook show-output" ng-show="output">
+            <div class="manage">
+            </div>
+            <div class="cell output"></div>
+            <div class="manage">
+            </div>
+        </div>
+
+        <div class="notebook row">
+            <div class="new-row" ng-show="!showButtons">
+                <i class="fas fa-plus-circle fa-3x" ng-click="showButtons = !showButtons"></i>
+                <h3 class="start">Choose cell</h3>
+            </div>
+            <div ng-show="showButtons" class="buttons">
+                <i class="fas fa-plus-circle fa-3x aaa" ng-click="showButtons = !showButtons"></i>
+                <img src="assets/images/play.png" class="add-new" alt="addNew1">
+                <img src="assets/images/camera.png" class="add-new" alt="addNew2">
+                <img src="assets/images/magnifier.png" class="add-new" alt="addNew3">
+                <img src="assets/images/code.png" class="add-new" alt="addNew4">
             </div>
         </div>
     </div>

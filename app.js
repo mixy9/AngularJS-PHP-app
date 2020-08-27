@@ -1,27 +1,30 @@
 
-var app = angular.module("app", ['ui.router', 'dx']);
+var app = angular.module("app", ['ui.router', 'ngAnimate']);
 
-    app.config(['$httpProvider', function ($httpProvider) {
-        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-
-
-    }]);
-
+app.config(['$httpProvider', function ($httpProvider) {
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+}]);
 
 app.controller("mainCtrl", ["$rootScope", "$scope", "$log", '$window',
     function ($rootScope, $scope, $log, $window) {
         $log.info("Angular application started!");
-        // Globalize.culture("en");
-        // $rootScope.series_type = Globalize.localize("series_type");
 
-        $scope.closedNav = true;
+        $scope.openNav = true;
+        $scope.windowWidth = $( window ).width();
 
-        $scope.showNav = function () {
-            $scope.closedNav = true;
-        }
+        $scope.width = $window.innerWidth;
 
-        $scope.hideNav = function () {
-            $scope.closedNav = false;
-        }
+        angular.element($window).bind('resize', function () {
+            $scope.$apply(function () {
+                $scope.width = $window.innerWidth;
+
+                if($scope.width < 1400){
+                    $scope.openNav = false;
+                }else{
+                    $scope.openNav = true;
+                }
+            });
+        });
+
     }
 ]);

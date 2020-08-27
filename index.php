@@ -18,24 +18,19 @@
     <script src="lib/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script src="lib/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
     <script src="lib/popper.min.js" type="text/javascript"></script>
-    <script src="lib/perfect-scrollbar.jquery.min.js"></script>
     <script src="lib/globalize.min.js"></script>
-    <script src="lib/angular1.7.8.min.js" type="text/javascript"></script>
+    <script src="lib/angular.js" type="text/javascript"></script>
+    <script src="lib/angular.min.js" type="text/javascript"></script>
+    <script src="lib/angular-animate.js" type="text/javascript"></script>
     <script src="lib/angular-ui-router-1.0.7.min.js" type="text/javascript"></script>
-    <script src="lib/dx19.1.6/Lib/js/jszip.js" type="text/javascript"></script>
-    <script src="lib/dx19.1.6/Lib/js/dx.viz-web.js" type="text/javascript"></script>
 
     <!--  Angular Config  -->
     <script src="app.js" type="text/javascript"></script>
     <script src="routing.js" type="text/javascript"></script>
 
     <!--  Services  -->
-    <script src="services/svc_api.js" type="text/javascript"></script> 
 
     <!--  Q Framework  -->
-    <script src="localisation/local.js" type="text/javascript"></script>
-    <script src="framework/ng-common.js" type="text/javascript"></script>
-    <script src="framework/custom-list/custom-list.js" type="text/javascript"></script>
 
     <!--  Directives  -->
 
@@ -47,42 +42,42 @@
 
 <body ng-app="app" ng-controller="mainCtrl as main">
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="nav-brand">
-                    <a href="" ui-sref="welcome">
-                        <img src="assets/images/logo.png" alt="">
-                    </a>
+<header>
+    <div class="container">
+        <nav>
+            <div class="nav-brand">
+                <a href="" ui-sref="welcome">
+                    <img src="assets/images/logo.png" alt="">
+                </a>
+            </div>
+
+            <div class="menu-icons open">
+                <i class="fas fa-bars" ng-click="openNav = !openNav"></i>
+            </div>
+
+            <ul class="nav-list sample-show-hide" ng-show="openNav">
+                <div class="menu-icons close">
+                    <i class="fas fa-times" ng-click="openNav = !openNav"></i>
                 </div>
 
-                <div class="menu-icons open">
-                    <i class="fas fa-bars" ng-click="showNav()"></i>
-                </div>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" ui-sref-active="current" ng-class="{current: $state.includes('welcome')}" ui-sref="welcome">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" ui-sref-active="current" ng-class="{current: $state.includes('dashboard')}" ui-sref="dashboard">Notebook</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-                <ul class="nav-list" ng-show="closedNav">
-                    <div class="menu-icons close">
-                        <i class="fas fa-times" ng-click="hideNav()"></i>
-                    </div>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" ui-sref-active="current" ng-class="{current: $state.includes('welcome')}" ui-sref="welcome">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" ui-sref-active="current" ng-class="{current: $state.includes('dashboard')}" ui-sref="dashboard">Notebook</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main ui-view class="root-ui-view"></main>
+<main ui-view class="root-ui-view"></main>
 
 <!--    <footer>-->
 <!--        Footer-->
